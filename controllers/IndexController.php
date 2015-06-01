@@ -2,9 +2,7 @@
 
 namespace app\controllers;
 
-use Yii;
-
-class CcccController extends \yii\web\Controller
+class IndexController extends \yii\web\Controller
 {
     public function actionIndex()
     {
