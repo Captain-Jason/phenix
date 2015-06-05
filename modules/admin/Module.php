@@ -14,5 +14,24 @@ class Module extends \yii\base\Module
 
         // custom initialization code goes here
         $this->layout = 'main';
+        $this->registerTranslations();
+    }
+
+    public function registerTranslations()
+    {
+        Yii::$app->i18n->translations['modules/admin/*'] = [
+            'class' => 'yii\i18n\PhpMessageSource',
+            'basePath' => '@app/modules/admin/messages',
+            'fileMap' => [
+                'modules/admin/validation' => 'validation.php',
+                'modules/admin/form' => 'form.php',
+                'modules/admin/app' => 'app.php',
+            ],
+        ];
+    }
+
+    public static function t($category, $message, $params = [], $language = null)
+    {
+        return Yii::t('modules/admin/' . $category, $message, $params, $language);
     }
 }

@@ -7,6 +7,7 @@ $config = [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'timeZone' => 'Asia/Shanghai',
+    'language' => 'zh-CN',
     'defaultRoute' => 'index',
     'components' => [
         'request' => [
@@ -44,10 +45,11 @@ $config = [
             'translations' => [
                 'app*' => [
                     'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@app/messages',
+                    'sourceLanguage' => 'en-US',
                     'fileMap' => [
                         'app' => 'app.php',
                         'app/error' => 'error.php',
-                        'app/modules/admin/kkk' => '@app/modules/admin/kkk.php',
                     ],
                     'on missingTranslation' => ['app\components\TranslationEventHandler', 'handleMissingTranslation']
                 ],

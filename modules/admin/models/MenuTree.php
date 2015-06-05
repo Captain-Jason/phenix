@@ -3,6 +3,7 @@
 namespace app\modules\admin\models;
 
 use Yii;
+use app\modules\admin\Module;
 
 /**
  * This is the model class for table "menu_tree".
@@ -41,11 +42,11 @@ class MenuTree extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('app', 'ID'),
-            'name' => Yii::t('app', 'Name'),
-            'parent_id' => Yii::t('app', 'Parent ID'),
-            'flat_dir' => Yii::t('app', 'Flat Dir'),
-            'children' => Yii::t('app', 'Children'),
+            'id' => Module::t('app', 'ID'),
+            'name' => Module::t('app', 'Name'),
+            'parent_id' => Module::t('app', 'Parent ID'),
+            'flat_dir' => Module::t('app', 'Flat Dir'),
+            'children' => Module::t('app', 'Children'),
         ];
     }
 

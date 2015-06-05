@@ -2,12 +2,13 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use app\modules\admin\Module;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\modules\admin\models\MenuTreeSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app/modules/admin/kkk', 'Menu Trees');
+$this->title = Module::t('app', 'Menu Trees');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="menu-tree-index">
@@ -16,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a(Yii::t('app/modules/admin/kkk', 'Create Menu Tree'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Module::t('app', 'Create Menu Tree'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
