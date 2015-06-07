@@ -6,6 +6,7 @@ use Yii;
 
 class Module extends \yii\base\Module
 {
+
     public $controllerNamespace = 'app\modules\admin\controllers';
 
     public function init()
@@ -14,14 +15,18 @@ class Module extends \yii\base\Module
 
         // custom initialization code goes here
         $this->layout = 'main';
+        $this->defaultRoute = 'index';
+        $this->setAliases(array(
+            '@admin' => __DIR__,
+        ));
         $this->registerTranslations();
     }
 
     public function registerTranslations()
     {
-        Yii::$app->i18n->translations['modules/admin/*'] = [
+        Yii::$app->i18n->translations['modules/'.$this->id.'/*'] = [
             'class' => 'yii\i18n\PhpMessageSource',
-            'basePath' => '@app/modules/admin/messages',
+            'basePath' => '@'.$this->id.'/messages',
             'fileMap' => [
                 'modules/admin/validation' => 'validation.php',
                 'modules/admin/form' => 'form.php',

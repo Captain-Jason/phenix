@@ -8,7 +8,7 @@ $config = [
     'bootstrap' => ['log'],
     'timeZone' => 'Asia/Shanghai',
     'language' => 'zh-CN',
-    'defaultRoute' => 'index',
+    'defaultRoute' => 'index',   // make the indexController to be the default controller
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
