@@ -11,6 +11,7 @@ use app\modules\admin\Module;
 $this->title = Module::t('app', 'Menu Trees');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<section id="content_wrapper">
 <div class="menu-tree-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -20,20 +21,6 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a(Module::t('app', 'Create Menu Tree'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
-            'name',
-            'parent_id',
-            'flat_dir',
-            'children',
-
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
 
 </div>
+</section>
